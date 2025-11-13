@@ -1,0 +1,7 @@
+opencv-python
+numpy
+pyyaml
+pynput
+fastapi
+uvicorn[standard]
+websockets

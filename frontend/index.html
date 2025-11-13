@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ボールゲーム - スコアシステム</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1 class="title">🎯 BALL GAME</h1>
+            <div class="connection-status" id="status">
+                <span class="status-dot"></span>
+                <span>接続中...</span>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- ゲームボード -->
+            <div class="game-board">
+                <canvas id="gameCanvas" width="640" height="480"></canvas>
+                
+                <!-- ボール位置表示 -->
+                <div class="ball-indicators">
+                    <div class="ball-info pink">
+                        <div class="ball-icon pink-ball"></div>
+                        <div class="ball-coords">
+                            <span>PINK</span>
+                            <div>X: <span id="pinkX">0</span></div>
+                            <div>Y: <span id="pinkY">0</span></div>
+                        </div>
+                    </div>
+                    <div class="ball-info cyan">
+                        <div class="ball-icon cyan-ball"></div>
+                        <div class="ball-coords">
+                            <span>CYAN</span>
+                            <div>X: <span id="cyanX">0</span></div>
+                            <div>Y: <span id="cyanY">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- スコアパネル -->
+            <div class="score-panel">
+                <!-- ゲーム状態 -->
+                <div class="game-state" id="gameState">
+                    <h2>待機中...</h2>
+                </div>
+
+                <!-- グリッド表示 -->
+                <div class="grid-display" id="gridDisplay">
+                    <!-- 動的生成 -->
+                </div>
+
+                <!-- 合計スコア -->
+                <div class="total-score">
+                    <h3>TOTAL SCORE</h3>
+                    <div class="score-value" id="totalScore">0</div>
+                </div>
+
+                <!-- コントロールボタン -->
+                <div class="controls">
+                    <button class="btn btn-primary" id="startBtn">
+                        📊 集計開始
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        🔄 リセット
+                    </button>
+                </div>
+
+                <!-- ヒット情報 -->
+                <div class="hit-info" id="hitInfo">
+                    <!-- 動的生成 -->
+                </div>
+            </div>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>キーボード: [S]集計 [R]リセット [Q]終了</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
